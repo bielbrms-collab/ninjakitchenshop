@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 348 83% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 348 83% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 348 83% 55%;
+
+    --radius: 0.5rem;
+
+    --flash-sale: 348 83% 55%;
+    --flash-sale-foreground: 0 0% 100%;
+    --discount-tag: 0 80% 50%;
+    --discount-tag-foreground: 0 0% 100%;
+    --price-original: 0 0% 60%;
+    --price-promo: 348 83% 47%;
+    --star: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Swiper gallery overrides */
+.image-gallery-swiper .swiper-button-next,
+.image-gallery-swiper .swiper-button-prev {
+  width: 32px;
+  height: 32px;
+  background: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid hsl(var(--border));
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.image-gallery-swiper .swiper-button-next::after,
+.image-gallery-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: bold;
+  color: hsl(var(--foreground));
+}
+.image-gallery-swiper .swiper-pagination-bullet {
+  background: hsl(var(--foreground) / 0.3);
+  opacity: 1;
+}
+.image-gallery-swiper .swiper-pagination-bullet-active {
+  background: hsl(var(--primary));
+}
