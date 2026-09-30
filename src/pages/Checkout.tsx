@@ -109,7 +109,6 @@ const Checkout = () => {
     },
   ];
 
-  // Card payment provider hook: no card integration is configured in this project yet.
   const handleContinue = async () => {
     if (paymentLoading) return;
     if (!addressFilled) {
@@ -120,10 +119,39 @@ const Checkout = () => {
     setPaymentError("");
     setPaymentLoading(true);
     try {
-      throw new Error("card-provider-not-configured");
+      const shipping = shippingOptions.find((s) => s.id === shippingMethod);
+      const lineItems = [
+        {
+          name: `Freidora de Aire Ninja FlexDrawer AF500EU 10,4 L – ${item.model}`,
+          amount_eur: item.price,
+          quantity: item.quantity,
+        },
+        ...upsells
+          .filter((u) => u.selected)
+          .map((u) => ({ name: u.name, amount_eur: u.promoPrice, quantity: 1 })),
+        {
+          name: shipping?.label || "Envío estándar",
+          amount_eur: shipping?.price ?? 6.0,
+          quantity: 1,
+        },
+      ];
+      const { data, error } = await supabase.functions.invoke("cooud-checkout", {
+        body: {
+          line_items: lineItems,
+          success_url: `${window.location.origin}/checkout?pago=ok`,
+          cancel_url: `${window.location.origin}/checkout`,
+          metadata: {
+            variante: item.model,
+            direccion: `${endereco} ${numero}, ${cidade}, ${estado}, ${cep}`,
+            cliente: nome,
+            telefono: telefone,
+          },
+        },
+      });
+      if (error || !data?.url) throw new Error(data?.error || error?.message || "cooud_error");
+      window.location.href = data.url;
     } catch {
       setPaymentError("No se ha podido cargar el pago con tarjeta. Inténtalo de nuevo en unos minutos.");
-    } finally {
       setPaymentLoading(false);
     }
   };
