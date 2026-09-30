@@ -128,7 +128,6 @@ const Checkout = () => {
     }
   };
 
-  const savings = getDiscount();
   const total = getTotal();
   const totalItems = getTotalItems();
 
