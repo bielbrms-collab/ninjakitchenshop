@@ -17,27 +17,7 @@ const ProductInfo = () => {
             Oficial
           </span>
           <h1 className="text-base font-bold text-foreground leading-tight">
-            {selectedModel.id === "norisk-argentina"
-              ? "CAPACETE NORISK SOUL ARGENTINA"
-              : selectedModel.id === "norisk-south-africa"
-              ? "CAPACETE NORISK SOUL SOUTH AFRICA"
-              : selectedModel.id === "norisk-france"
-              ? "CAPACETE NORISK SOUL FRANCE"
-              : selectedModel.id === "norisk-japan"
-              ? "CAPACETE NORISK SOUL JAPAN"
-              : selectedModel.id === "norisk-brazil"
-              ? "CAPACETE NORISK SOUL BRAZIL"
-              : selectedModel.id === "norisk-uk"
-              ? "CAPACETE NORISK SOUL UNITED KINGDOM"
-              : selectedModel.id === "norisk-manty-rosa"
-              ? "CAPACETE NORISK SOUL II MANTY ROSA FOSCO"
-              : selectedModel.id === "ls2-xdron-cyan"
-              ? "CAPACETE LS2 FF358 XDRON CYAN"
-              : selectedModel.id === "ls2-draze-preto"
-              ? "CAPACETE LS2 FF358 CLASSIC DRAZE PRETO"
-              : selectedModel.id === "ls2-xdron-neon"
-              ? "CAPACETE LS2 FF358 CLASSIC XDRON NEON"
-              : "CAPACETE LS2 CLASSIC"}
+            AIRFRYER NINJA FLEXDRAWER AF500EU 10,4 L – DUAL ZONE, 7 FUNÇÕES, PRETA
           </h1>
         </div>
         <div className="flex items-center gap-2 text-sm">
@@ -82,7 +62,7 @@ const ProductInfo = () => {
               </div>
             ))}
           </div>
-          <span className="text-xs text-muted-foreground whitespace-nowrap">{models.length} opções disponíveis</span>
+          <span className="text-xs text-muted-foreground whitespace-nowrap">Cor: Preto</span>
           <ChevronRight className="w-4 h-4 text-muted-foreground" />
         </button>
       </div>

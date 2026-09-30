@@ -6,7 +6,7 @@ import { useProduct } from "@/contexts/ProductContext";
 import { tiktokInitiateCheckout } from "@/lib/tiktokTracking";
 
 
-const sizes = ["54/XS", "56/S", "58/M", "60/L", "62/XL"];
+const sizes = ["10,4 L"];
 
 interface Props {
   open: boolean;
@@ -16,7 +16,7 @@ interface Props {
 
 const ProductSelectModal = ({ open, onClose, mode }: Props) => {
   const { models, selectedModelIndex, setSelectedModelIndex, selectedModel } = useProduct();
-  const [selectedSize, setSelectedSize] = useState(2);
+  const [selectedSize, setSelectedSize] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
 
         {/* Model selector */}
         <div className="px-4 py-4">
-          <h3 className="text-sm font-bold text-foreground mb-3">Modelo ({models.length})</h3>
+          <h3 className="text-sm font-bold text-foreground mb-3">Cor ({models.length})</h3>
           <div className="grid grid-cols-3 gap-3">
             {models.map((m, i) => (
               <button
@@ -83,7 +83,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
 
         {/* Size selector */}
         <div className="px-4 pb-4">
-          <h3 className="text-sm font-bold text-foreground mb-3">Tamanho ({sizes.length})</h3>
+          <h3 className="text-sm font-bold text-foreground mb-3">Capacidade ({sizes.length})</h3>
           <div className="flex gap-2 flex-wrap">
             {sizes.map((s, i) => (
               <button
@@ -123,7 +123,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
           <button
             onClick={() => {
               handleAction();
-              tiktokInitiateCheckout(price * quantity, selectedModel.id, `CAPACETE ${selectedModel.name}`);
+              tiktokInitiateCheckout(price * quantity, selectedModel.id, `AIRFRYER ${selectedModel.name}`);
               navigate("/checkout");
             }}
             className="flex-1 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm"
