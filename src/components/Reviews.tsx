@@ -18,7 +18,7 @@ const reviews = [
     avatar: avatarR,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Cabe um frango inteiro, muito prático. Pode ir sem medo",
-    images: [] as string[],
+    images: [review1.url, review7.url] as string[],
   },
   {
     name: "B**a",
@@ -26,28 +26,28 @@ const reviews = [
     initial: "B",
     item: "Airfryer Ninja AF500EU · Preto",
     text: "As duas gavetas salvam o jantar, faço carne e batata juntos",
-    images: [] as string[],
+    images: [review5.url] as string[],
   },
   {
     name: "A**a",
     avatar: avatarA,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Perfeito, amei muitooo💖💖💖.",
-    images: [] as string[],
+    images: [review4.url] as string[],
   },
   {
     name: "R**l",
     avatar: avatarRl,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Peguei uma pra mim e outra pra minha mãe, ela adorou",
-    images: [] as string[],
+    images: [review3.url] as string[],
   },
   {
     name: "Joel Lima",
     avatar: avatarJoel,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Comprei meio na dúvida, mas a qualidade surpreendeu",
-    images: [] as string[],
+    images: [review2.url, review6.url] as string[],
   },
 ];
 
