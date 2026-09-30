@@ -419,13 +419,6 @@ const Checkout = () => {
         {paymentError && <p className="text-xs text-destructive mt-2 text-center">{paymentError}</p>}
       </div>
 
-      {/* Savings Banner */}
-      <div className="bg-primary/10 px-4 py-2 flex items-center justify-center gap-2">
-        <Smile className="w-4 h-4 text-primary" />
-        <span className="text-primary text-xs font-medium">
-          Ahorras € {savings.toFixed(2)} en este pedido.
-        </span>
-      </div>
 
       {/* Sticky Bottom CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border max-w-lg mx-auto">
