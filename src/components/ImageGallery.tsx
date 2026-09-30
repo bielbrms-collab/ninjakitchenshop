@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import { useProduct } from "@/contexts/ProductContext";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -10,16 +9,30 @@ import "swiper/css/pagination";
 // @ts-ignore
 import "swiper/css/navigation";
 
+import ninja1 from "@/assets/ninja-image.png.asset.json";
+import ninja2 from "@/assets/ninja-image-2.png.asset.json";
+import ninja3 from "@/assets/ninja-image-3.png.asset.json";
+import ninja4 from "@/assets/ninja-image-4.png.asset.json";
+import ninja5 from "@/assets/ninja-image-5.png.asset.json";
+import ninja6 from "@/assets/ninja-image-6.png.asset.json";
+import ninja7 from "@/assets/ninja-image-7.png.asset.json";
+
+const galleryImages = [
+  { src: ninja1.url, label: "Ninja FlexDrawer" },
+  { src: ninja2.url, label: "2 gavetas independentes" },
+  { src: ninja3.url, label: "Capacidade de 10,4 L" },
+  { src: ninja4.url, label: "Na sua cozinha" },
+  { src: ninja5.url, label: "Cozinha na gaveta" },
+  { src: ninja6.url, label: "Tecnologia Dual Zone" },
+  { src: ninja7.url, label: "Fácil de limpar" },
+];
+
 const ImageGallery = () => {
-  const { models, setSelectedModelIndex } = useProduct();
-  // Show all models in the carousel so user can swipe through all products
-  const images = models.map((m) => ({ src: m.thumbnail, label: m.name }));
   const swiperRef = useRef<SwiperType | null>(null);
-  const [current, setCurrent] = useState(0);
+  const [, setCurrent] = useState(0);
 
   const handleSlideChange = (swiper: SwiperType) => {
     setCurrent(swiper.activeIndex);
-    setSelectedModelIndex(swiper.activeIndex);
   };
 
   return (
@@ -35,7 +48,7 @@ const ImageGallery = () => {
           onSlideChange={handleSlideChange}
           className="h-full w-full"
         >
-          {images.map((img, i) => (
+          {galleryImages.map((img, i) => (
             <SwiperSlide key={i} className="flex items-center justify-center">
               <div className="h-full w-full flex items-center justify-center relative">
                 <img
