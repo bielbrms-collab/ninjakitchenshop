@@ -1,9 +1,14 @@
 import ninjaMain from "@/assets/ninja-image.png.asset.json";
+import ninjaWh from "@/assets/ninja-wh.jpg.asset.json";
+import ninjaCyd from "@/assets/ninja-cyd.jpg.asset.json";
+import ninjaSd from "@/assets/ninja-sd.jpg.asset.json";
+import ninjaCp from "@/assets/ninja-cp.jpg.asset.json";
 import { createContext, useContext, useState, ReactNode } from "react";
 
 export interface ProductModel {
   id: string;
   name: string;
+  colorName?: string;
   thumbnail: string;
   galleryImages: string[];
   price?: number;
@@ -16,6 +21,43 @@ const productModels: ProductModel[] = [
     name: "Ninja FlexDrawer AF500EU 10,4 L Negro",
     thumbnail: ninjaMain.url,
     galleryImages: [ninjaMain.url],
+    price: 48.97,
+    originalPrice: 799.0,
+    colorName: "Preto",
+  },
+  {
+    id: "ninja-af500eu-branco",
+    name: "Ninja FlexDrawer AF500EU 10,4 L Branco",
+    colorName: "Branco",
+    thumbnail: ninjaWh.url,
+    galleryImages: [ninjaWh.url],
+    price: 48.97,
+    originalPrice: 799.0,
+  },
+  {
+    id: "ninja-af500eu-azul",
+    name: "Ninja FlexDrawer AF500EU 10,4 L Azul Ciberespaço",
+    colorName: "Azul Ciberespaço",
+    thumbnail: ninjaCyd.url,
+    galleryImages: [ninjaCyd.url],
+    price: 48.97,
+    originalPrice: 799.0,
+  },
+  {
+    id: "ninja-af500eu-preto-cobre",
+    name: "Ninja FlexDrawer AF500EU 10,4 L Preto/Cobre",
+    colorName: "Preto/Cobre",
+    thumbnail: ninjaCp.url,
+    galleryImages: [ninjaCp.url],
+    price: 48.97,
+    originalPrice: 799.0,
+  },
+  {
+    id: "ninja-af500eu-bege-dourado",
+    name: "Ninja FlexDrawer AF500EU 10,4 L Bege/Dourado",
+    colorName: "Bege/Dourado",
+    thumbnail: ninjaSd.url,
+    galleryImages: [ninjaSd.url],
     price: 48.97,
     originalPrice: 799.0,
   },
