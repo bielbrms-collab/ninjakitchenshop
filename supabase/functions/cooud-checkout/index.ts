@@ -75,12 +75,13 @@ serve(async (req) => {
     }
 
     let url: string = data.url;
-    // Sandbox sessions must be opened on the sandbox checkout host.
-    if (data.livemode === false && url?.startsWith("https://cooud.com/")) {
-      url = url.replace("https://cooud.com/", "https://checkout-sandbox.cooud.com/");
+    // Hosted checkout lives on checkout.cooud.com (live) / checkout-sandbox.cooud.com (sandbox).
+    if (url?.startsWith("https://cooud.com/")) {
+      const host = data.livemode === false ? "checkout-sandbox.cooud.com" : "checkout.cooud.com";
+      url = url.replace("https://cooud.com/", `https://${host}/`);
     }
 
-    return new Response(JSON.stringify({ url, id: data.id, livemode: data.livemode, sandbox: data.sandbox ?? null }), {
+    return new Response(JSON.stringify({ url, id: data.id }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
