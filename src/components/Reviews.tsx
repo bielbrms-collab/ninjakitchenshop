@@ -4,6 +4,13 @@ import avatarR from "@/assets/reviews/avatar-r.jpg";
 import avatarA from "@/assets/reviews/avatar-a.jpg";
 import avatarRl from "@/assets/reviews/avatar-rl.jpg";
 import avatarJoel from "@/assets/reviews/avatar-joel.jpg";
+import review1 from "@/assets/review-1.jpg.asset.json";
+import review2 from "@/assets/review-2.jpg.asset.json";
+import review3 from "@/assets/review-3.jpg.asset.json";
+import review4 from "@/assets/review-4.jpg.asset.json";
+import review5 from "@/assets/review-5.jpg.asset.json";
+import review6 from "@/assets/review-6.jpg.asset.json";
+import review7 from "@/assets/review-7.jpg.asset.json";
 
 const reviews = [
   {
