@@ -305,10 +305,10 @@ const Checkout = () => {
             <div className="flex items-center justify-between mt-2">
               <div>
                 <span className="text-primary font-bold text-sm">
-                  R$ {item.price.toFixed(2)}
+                  € {item.price.toFixed(2)}
                 </span>
                 <span className="text-muted-foreground line-through text-xs ml-1">
-                  R$ {item.originalPrice.toFixed(2)}
+                  € {item.originalPrice.toFixed(2)}
                 </span>
                 <span className="text-primary text-xs ml-1">
                   -{Math.round((1 - item.price / item.originalPrice) * 100)}%
@@ -383,14 +383,14 @@ const Checkout = () => {
               <p className="text-xs font-medium text-foreground leading-tight">{upsell.name}</p>
               <div className="mt-1">
                 <span className="text-muted-foreground line-through text-xs">
-                  De R$ {upsell.originalPrice.toFixed(2)}
+                  De € {upsell.originalPrice.toFixed(2)}
                 </span>
                 <span className="text-primary font-bold text-sm ml-1">
-                  Por R$ {upsell.promoPrice.toFixed(2)}
+                  Por € {upsell.promoPrice.toFixed(2)}
                 </span>
               </div>
               <p className="text-emerald-500 text-[10px] mt-0.5">
-                Você economiza R$ {(upsell.originalPrice - upsell.promoPrice).toFixed(2)}
+                Você economiza € {(upsell.originalPrice - upsell.promoPrice).toFixed(2)}
               </p>
             </div>
           </button>
@@ -403,20 +403,20 @@ const Checkout = () => {
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
             <span className="text-foreground">Subtotal do produto</span>
-            <span className="text-foreground font-medium">R$ {getSubtotal().toFixed(2)}</span>
+            <span className="text-foreground font-medium">€ {getSubtotal().toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-primary text-xs">Desconto no produto</span>
-            <span className="text-primary text-xs">- R$ {getDiscount().toFixed(2)}</span>
+            <span className="text-primary text-xs">- € {getDiscount().toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-foreground">Subtotal do envio</span>
-            <span className="text-foreground font-medium">R$ {getShippingCost().toFixed(2)}</span>
+            <span className="text-foreground font-medium">€ {getShippingCost().toFixed(2)}</span>
           </div>
           <div className="border-t border-border pt-2 flex justify-between">
             <span className="font-bold text-foreground">Total</span>
             <div className="text-right">
-              <span className="font-bold text-lg text-foreground">R$ {total.toFixed(2)}</span>
+              <span className="font-bold text-lg text-foreground">€ {total.toFixed(2)}</span>
               <p className="text-[10px] text-muted-foreground">Impostos inclusos</p>
             </div>
           </div>
@@ -454,7 +454,7 @@ const Checkout = () => {
       <div className="bg-primary/10 px-4 py-2 flex items-center justify-center gap-2">
         <Smile className="w-4 h-4 text-primary" />
         <span className="text-primary text-xs font-medium">
-          Você está economizando R$ {savings.toFixed(2)} nesse pedido.
+          Você está economizando € {savings.toFixed(2)} nesse pedido.
         </span>
       </div>
 
@@ -465,7 +465,7 @@ const Checkout = () => {
             <span className="text-sm font-medium text-foreground">
               Total ({totalItems} {totalItems === 1 ? "item" : "itens"})
             </span>
-            <span className="text-primary font-bold text-lg">R$ {total.toFixed(2)}</span>
+            <span className="text-primary font-bold text-lg">€ {total.toFixed(2)}</span>
           </div>
           <button
             onClick={() => {
