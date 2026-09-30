@@ -1,4 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
+import bump1 from "@/assets/bump-15.png.asset.json";
+import bump2 from "@/assets/bump-16.png.asset.json";
+import bump3 from "@/assets/bump-17.png.asset.json";
 
 export interface CartItem {
   model: string;
@@ -12,6 +15,7 @@ export interface CartItem {
 export interface UpsellItem {
   id: string;
   name: string;
+  description?: string;
   image: string;
   originalPrice: number;
   promoPrice: number;
@@ -37,30 +41,33 @@ interface CartContextType {
 
 const defaultUpsells: UpsellItem[] = [
   {
-    id: "viseira",
-    name: "Pague em 5 minutos e GANHE: Viseira Classic Colorida",
-    image: "/images/viseira-colorida.png",
-    originalPrice: 159.90,
-    promoPrice: 0,
-    discount: "-100%",
+    id: "moldes-silicona",
+    name: "¡AÑADE AHORA! Kit de Moldes de Silicona para Air Fryer",
+    description: "Reutilizables, prácticos y fáciles de limpiar.",
+    image: bump1.url,
+    originalPrice: 9.97,
+    promoPrice: 9.97,
+    discount: "",
     selected: false,
   },
   {
-    id: "intercom",
-    name: "Você ganhou um DESCONTO único AGORA: Intercomunicador V6 PLUS com Bluetooth",
-    image: "/images/intercomunicador-v6.png",
-    originalPrice: 225.99,
-    promoPrice: 19.97,
-    discount: "-91%",
+    id: "kit-accesorios",
+    name: "¡OFERTA ESPECIAL! Kit de Accesorios para Air Fryer",
+    description: "Todo lo que necesitas para aprovechar aún más tu Air Fryer.",
+    image: bump2.url,
+    originalPrice: 14.97,
+    promoPrice: 14.97,
+    discount: "",
     selected: false,
   },
   {
-    id: "intercom-v10",
-    name: "OFERTA EXCLUSIVA: Fone De Ouvido Intercomunicador Moto V10 RGB",
-    image: "/images/intercomunicador-v10.png",
-    originalPrice: 249.90,
-    promoPrice: 18.90,
-    discount: "-92%",
+    id: "protector-reutilizable",
+    name: "¡COMPLETA TU PEDIDO! Protector Reutilizable para Air Fryer",
+    description: "Ayuda a proteger la cesta y facilita la limpieza.",
+    image: bump3.url,
+    originalPrice: 7.97,
+    promoPrice: 7.97,
+    discount: "",
     selected: false,
   },
 ];
