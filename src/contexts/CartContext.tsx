@@ -66,9 +66,8 @@ const defaultUpsells: UpsellItem[] = [
 ];
 
 const shippingOptions: Record<string, number> = {
-  tiktok: 0,
-  jadlog: 12.53,
-  sedex: 36.78,
+  standard: 6,
+  express: 12,
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -76,7 +75,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [upsells, setUpsells] = useState<UpsellItem[]>(defaultUpsells);
-  const [shippingMethod, setShippingMethod] = useState("jadlog");
+  const [shippingMethod, setShippingMethod] = useState("standard");
 
   const addItem = (item: CartItem) => {
     setItems([item]); // single product store

@@ -123,28 +123,14 @@ const Checkout = () => {
 
   const shippingOptions = [
     {
-      id: "tiktok",
-      label: "Tiktok Envio",
-      sublabel: "Chega em 7-14 dias",
-      price: 0,
-      logo: "🎵",
-      logoText: "TikTok Shop",
+      id: "standard",
+      label: "Standard Delivery",
+      price: 6.0,
     },
     {
-      id: "jadlog",
-      label: "JADLOG",
-      sublabel: "Chega em 3-5 dias",
-      price: 12.53,
-      logo: "📦",
-      logoText: "jadlog",
-    },
-    {
-      id: "sedex",
-      label: "Sedex",
-      sublabel: "Chega em 1-3 dias",
-      price: 17.32,
-      logo: "📮",
-      logoText: "SEDEX",
+      id: "express",
+      label: "Express Delivery",
+      price: 12.0,
     },
   ];
 
@@ -312,12 +298,9 @@ const Checkout = () => {
             className="w-20 h-20 object-cover rounded-lg border border-border"
           />
           <div className="flex-1">
-            <div className="flex items-start gap-1">
-              <span className="bg-emerald-500 text-background text-[10px] font-bold px-1.5 py-0.5 rounded">PROMO VERÃO</span>
-              <p className="text-xs font-medium text-foreground leading-tight">
-                AIRFRYER {item.model}
-              </p>
-            </div>
+            <p className="text-xs font-medium text-foreground leading-tight">
+              AIRFRYER {item.model}
+            </p>
             <p className="text-[11px] text-muted-foreground mt-0.5">{item.model}</p>
             <div className="flex items-center justify-between mt-2">
               <div>
@@ -347,7 +330,7 @@ const Checkout = () => {
 
       {/* Shipping */}
       <div className="bg-secondary px-4 py-4">
-        <h3 className="font-bold text-sm text-foreground mb-3">Método de entrega</h3>
+        <h3 className="font-bold text-sm text-foreground mb-3">Shipping method</h3>
         <div className="space-y-2">
           {shippingOptions.map((opt) => (
             <button
@@ -366,16 +349,10 @@ const Checkout = () => {
                   <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                 )}
               </div>
-              <span className="text-lg mr-2">{opt.logo}</span>
               <div className="flex-1 text-left">
                 <p className="text-sm font-semibold text-foreground">{opt.label}</p>
-                <p className="text-xs text-muted-foreground">{opt.sublabel}</p>
               </div>
-              {opt.price === 0 ? (
-                <span className="text-emerald-500 font-bold text-sm">GRÁTIS</span>
-              ) : (
-                <span className="text-sm font-semibold text-foreground">R$ {opt.price.toFixed(2)}</span>
-              )}
+              <span className="text-sm font-semibold text-foreground">€ {opt.price.toFixed(2)}</span>
             </button>
           ))}
         </div>
