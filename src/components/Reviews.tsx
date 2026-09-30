@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Star, ChevronRight } from "lucide-react";
 import avatarR from "@/assets/reviews/avatar-r.jpg";
 import avatarA from "@/assets/reviews/avatar-a.jpg";
@@ -44,8 +45,17 @@ const reviews = [
 ];
 
 const Reviews = () => {
+  const [zoom, setZoom] = useState<string | null>(null);
   return (
     <div className="px-4 py-4 bg-background border-t-4 border-secondary">
+      {zoom && (
+        <div
+          className="fixed inset-0 z-50 bg-foreground/80 flex items-center justify-center p-4"
+          onClick={() => setZoom(null)}
+        >
+          <img src={zoom} alt="Foto ampliada" className="max-w-full max-h-full object-contain rounded-lg" />
+        </div>
+      )}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-base font-bold text-foreground">Avaliações dos clientes (847)</h2>
         <button className="flex items-center text-xs text-muted-foreground">
@@ -92,16 +102,20 @@ const Reviews = () => {
             </div>
             <p className="text-xs text-muted-foreground mb-1">Item: {r.item}</p>
             <p className="text-sm text-foreground mb-2">{r.text}</p>
-            <div className="flex gap-2 overflow-x-auto">
-              {r.images.map((img, j) => (
-                <img
-                  key={j}
-                  src={img}
-                  alt="Review"
-                  className="w-20 h-20 rounded-lg object-cover shrink-0"
-                />
-              ))}
-            </div>
+            {r.images.length > 0 && (
+              <div className="flex gap-2 max-w-full overflow-x-auto">
+                {r.images.map((img, j) => (
+                  <button key={j} type="button" onClick={() => setZoom(img)} className="shrink-0">
+                    <img
+                      src={img}
+                      alt={`Foto da avaliação de ${r.name}`}
+                      loading="lazy"
+                      className="h-24 w-auto max-w-[45vw] rounded-lg object-contain bg-muted"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
