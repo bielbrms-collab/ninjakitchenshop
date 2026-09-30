@@ -123,28 +123,14 @@ const Checkout = () => {
 
   const shippingOptions = [
     {
-      id: "tiktok",
-      label: "Tiktok Envio",
-      sublabel: "Chega em 7-14 dias",
-      price: 0,
-      logo: "🎵",
-      logoText: "TikTok Shop",
+      id: "standard",
+      label: "Standard Delivery",
+      price: 6.0,
     },
     {
-      id: "jadlog",
-      label: "JADLOG",
-      sublabel: "Chega em 3-5 dias",
-      price: 12.53,
-      logo: "📦",
-      logoText: "jadlog",
-    },
-    {
-      id: "sedex",
-      label: "Sedex",
-      sublabel: "Chega em 1-3 dias",
-      price: 17.32,
-      logo: "📮",
-      logoText: "SEDEX",
+      id: "express",
+      label: "Express Delivery",
+      price: 12.0,
     },
   ];
 
@@ -312,20 +298,17 @@ const Checkout = () => {
             className="w-20 h-20 object-cover rounded-lg border border-border"
           />
           <div className="flex-1">
-            <div className="flex items-start gap-1">
-              <span className="bg-emerald-500 text-background text-[10px] font-bold px-1.5 py-0.5 rounded">PROMO VERÃO</span>
-              <p className="text-xs font-medium text-foreground leading-tight">
-                AIRFRYER {item.model}
-              </p>
-            </div>
+            <p className="text-xs font-medium text-foreground leading-tight">
+              AIRFRYER {item.model}
+            </p>
             <p className="text-[11px] text-muted-foreground mt-0.5">{item.model}</p>
             <div className="flex items-center justify-between mt-2">
               <div>
                 <span className="text-primary font-bold text-sm">
-                  R$ {item.price.toFixed(2)}
+                  € {item.price.toFixed(2)}
                 </span>
                 <span className="text-muted-foreground line-through text-xs ml-1">
-                  R$ {item.originalPrice.toFixed(2)}
+                  € {item.originalPrice.toFixed(2)}
                 </span>
                 <span className="text-primary text-xs ml-1">
                   -{Math.round((1 - item.price / item.originalPrice) * 100)}%
@@ -347,7 +330,7 @@ const Checkout = () => {
 
       {/* Shipping */}
       <div className="bg-secondary px-4 py-4">
-        <h3 className="font-bold text-sm text-foreground mb-3">Método de entrega</h3>
+        <h3 className="font-bold text-sm text-foreground mb-3">Shipping method</h3>
         <div className="space-y-2">
           {shippingOptions.map((opt) => (
             <button
@@ -366,16 +349,10 @@ const Checkout = () => {
                   <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                 )}
               </div>
-              <span className="text-lg mr-2">{opt.logo}</span>
               <div className="flex-1 text-left">
                 <p className="text-sm font-semibold text-foreground">{opt.label}</p>
-                <p className="text-xs text-muted-foreground">{opt.sublabel}</p>
               </div>
-              {opt.price === 0 ? (
-                <span className="text-emerald-500 font-bold text-sm">GRÁTIS</span>
-              ) : (
-                <span className="text-sm font-semibold text-foreground">R$ {opt.price.toFixed(2)}</span>
-              )}
+              <span className="text-sm font-semibold text-foreground">€ {opt.price.toFixed(2)}</span>
             </button>
           ))}
         </div>
@@ -406,14 +383,14 @@ const Checkout = () => {
               <p className="text-xs font-medium text-foreground leading-tight">{upsell.name}</p>
               <div className="mt-1">
                 <span className="text-muted-foreground line-through text-xs">
-                  De R$ {upsell.originalPrice.toFixed(2)}
+                  De € {upsell.originalPrice.toFixed(2)}
                 </span>
                 <span className="text-primary font-bold text-sm ml-1">
-                  Por R$ {upsell.promoPrice.toFixed(2)}
+                  Por € {upsell.promoPrice.toFixed(2)}
                 </span>
               </div>
               <p className="text-emerald-500 text-[10px] mt-0.5">
-                Você economiza R$ {(upsell.originalPrice - upsell.promoPrice).toFixed(2)}
+                Você economiza € {(upsell.originalPrice - upsell.promoPrice).toFixed(2)}
               </p>
             </div>
           </button>
@@ -426,20 +403,20 @@ const Checkout = () => {
         <div className="space-y-2 text-sm">
           <div className="flex justify-between">
             <span className="text-foreground">Subtotal do produto</span>
-            <span className="text-foreground font-medium">R$ {getSubtotal().toFixed(2)}</span>
+            <span className="text-foreground font-medium">€ {getSubtotal().toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-primary text-xs">Desconto no produto</span>
-            <span className="text-primary text-xs">- R$ {getDiscount().toFixed(2)}</span>
+            <span className="text-primary text-xs">- € {getDiscount().toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
             <span className="text-foreground">Subtotal do envio</span>
-            <span className="text-foreground font-medium">R$ {getShippingCost().toFixed(2)}</span>
+            <span className="text-foreground font-medium">€ {getShippingCost().toFixed(2)}</span>
           </div>
           <div className="border-t border-border pt-2 flex justify-between">
             <span className="font-bold text-foreground">Total</span>
             <div className="text-right">
-              <span className="font-bold text-lg text-foreground">R$ {total.toFixed(2)}</span>
+              <span className="font-bold text-lg text-foreground">€ {total.toFixed(2)}</span>
               <p className="text-[10px] text-muted-foreground">Impostos inclusos</p>
             </div>
           </div>
@@ -477,7 +454,7 @@ const Checkout = () => {
       <div className="bg-primary/10 px-4 py-2 flex items-center justify-center gap-2">
         <Smile className="w-4 h-4 text-primary" />
         <span className="text-primary text-xs font-medium">
-          Você está economizando R$ {savings.toFixed(2)} nesse pedido.
+          Você está economizando € {savings.toFixed(2)} nesse pedido.
         </span>
       </div>
 
@@ -488,7 +465,7 @@ const Checkout = () => {
             <span className="text-sm font-medium text-foreground">
               Total ({totalItems} {totalItems === 1 ? "item" : "itens"})
             </span>
-            <span className="text-primary font-bold text-lg">R$ {total.toFixed(2)}</span>
+            <span className="text-primary font-bold text-lg">€ {total.toFixed(2)}</span>
           </div>
           <button
             onClick={() => {
