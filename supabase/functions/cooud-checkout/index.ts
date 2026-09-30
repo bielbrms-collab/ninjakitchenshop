@@ -74,7 +74,13 @@ serve(async (req) => {
       );
     }
 
-    return new Response(JSON.stringify({ url: data.url, id: data.id }), {
+    let url: string = data.url;
+    // Sandbox sessions must be opened on the sandbox checkout host.
+    if (data.livemode === false && url?.startsWith("https://cooud.com/")) {
+      url = url.replace("https://cooud.com/", "https://checkout-sandbox.cooud.com/");
+    }
+
+    return new Response(JSON.stringify({ url, id: data.id }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
