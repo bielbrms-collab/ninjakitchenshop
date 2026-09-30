@@ -373,25 +373,17 @@ const Checkout = () => {
             }`}>
               {upsell.selected && <span className="text-background text-xs">✓</span>}
             </div>
-            <img src={upsell.image} alt={upsell.name} className="w-16 h-16 object-contain rounded" />
+            <img src={upsell.image} alt={upsell.name} className="w-16 h-16 object-contain rounded bg-background" />
             <div className="flex-1 text-left">
-              <div className="flex justify-end mb-1">
-                <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded">
-                  {upsell.discount} OFF
-                </span>
-              </div>
               <p className="text-xs font-medium text-foreground leading-tight">{upsell.name}</p>
+              {upsell.description && (
+                <p className="text-[11px] text-muted-foreground leading-tight mt-0.5">{upsell.description}</p>
+              )}
               <div className="mt-1">
-                <span className="text-muted-foreground line-through text-xs">
-                  De € {upsell.originalPrice.toFixed(2)}
-                </span>
-                <span className="text-primary font-bold text-sm ml-1">
-                  Por € {upsell.promoPrice.toFixed(2)}
+                <span className="text-primary font-bold text-sm">
+                  € {upsell.promoPrice.toFixed(2).replace(".", ",")}
                 </span>
               </div>
-              <p className="text-emerald-500 text-[10px] mt-0.5">
-                Você economiza € {(upsell.originalPrice - upsell.promoPrice).toFixed(2)}
-              </p>
             </div>
           </button>
         ))}
