@@ -4,6 +4,13 @@ import avatarR from "@/assets/reviews/avatar-r.jpg";
 import avatarA from "@/assets/reviews/avatar-a.jpg";
 import avatarRl from "@/assets/reviews/avatar-rl.jpg";
 import avatarJoel from "@/assets/reviews/avatar-joel.jpg";
+import review1 from "@/assets/review-1.jpg.asset.json";
+import review2 from "@/assets/review-2.jpg.asset.json";
+import review3 from "@/assets/review-3.jpg.asset.json";
+import review4 from "@/assets/review-4.jpg.asset.json";
+import review5 from "@/assets/review-5.jpg.asset.json";
+import review6 from "@/assets/review-6.jpg.asset.json";
+import review7 from "@/assets/review-7.jpg.asset.json";
 
 const reviews = [
   {
@@ -11,7 +18,7 @@ const reviews = [
     avatar: avatarR,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Cabe um frango inteiro, muito prático. Pode ir sem medo",
-    images: [] as string[],
+    images: [review1.url, review7.url] as string[],
   },
   {
     name: "B**a",
@@ -19,28 +26,28 @@ const reviews = [
     initial: "B",
     item: "Airfryer Ninja AF500EU · Preto",
     text: "As duas gavetas salvam o jantar, faço carne e batata juntos",
-    images: [] as string[],
+    images: [review5.url] as string[],
   },
   {
     name: "A**a",
     avatar: avatarA,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Perfeito, amei muitooo💖💖💖.",
-    images: [] as string[],
+    images: [review4.url] as string[],
   },
   {
     name: "R**l",
     avatar: avatarRl,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Peguei uma pra mim e outra pra minha mãe, ela adorou",
-    images: [] as string[],
+    images: [review3.url] as string[],
   },
   {
     name: "Joel Lima",
     avatar: avatarJoel,
     item: "Airfryer Ninja AF500EU · Preto",
     text: "Comprei meio na dúvida, mas a qualidade surpreendeu",
-    images: [] as string[],
+    images: [review2.url, review6.url] as string[],
   },
 ];
 
