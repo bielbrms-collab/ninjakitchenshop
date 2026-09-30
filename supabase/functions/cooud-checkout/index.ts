@@ -80,7 +80,7 @@ serve(async (req) => {
       url = url.replace("https://cooud.com/", "https://checkout-sandbox.cooud.com/");
     }
 
-    return new Response(JSON.stringify({ url, id: data.id }), {
+    return new Response(JSON.stringify({ url, id: data.id, livemode: data.livemode, sandbox: data.sandbox ?? null }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
