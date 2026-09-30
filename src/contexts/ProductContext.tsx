@@ -40,7 +40,7 @@ const productModels: ProductModel[] = [
     colorName: "Azul Ciberespaço",
     thumbnail: ninjaCyd.url,
     galleryImages: [ninjaCyd.url],
-    price: 48.97,
+    price: 52.97,
     originalPrice: 799.0,
   },
   {
@@ -49,7 +49,7 @@ const productModels: ProductModel[] = [
     colorName: "Preto/Cobre",
     thumbnail: ninjaCp.url,
     galleryImages: [ninjaCp.url],
-    price: 48.97,
+    price: 56.97,
     originalPrice: 799.0,
   },
   {
@@ -58,7 +58,7 @@ const productModels: ProductModel[] = [
     colorName: "Bege/Dourado",
     thumbnail: ninjaSd.url,
     galleryImages: [ninjaSd.url],
-    price: 48.97,
+    price: 59.97,
     originalPrice: 799.0,
   },
 ];
