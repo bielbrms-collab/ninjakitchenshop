@@ -9,21 +9,21 @@ import "swiper/css/pagination";
 // @ts-ignore
 import "swiper/css/navigation";
 
-import ninja1 from "@/assets/ninja-image.png.asset.json";
-import ninja2 from "@/assets/ninja-image-2.png.asset.json";
-import ninja3 from "@/assets/ninja-image-3.png.asset.json";
-import ninja4 from "@/assets/ninja-image-4.png.asset.json";
-import ninja5 from "@/assets/ninja-image-5.png.asset.json";
-import ninja6 from "@/assets/ninja-image-6.png.asset.json";
-import ninja7 from "@/assets/ninja-image-7.png.asset.json";
+import ninja1 from "@/assets/ninja-site-1.jpg.asset.json";
+import ninja2 from "@/assets/ninja-site-2.jpg.asset.json";
+import ninja3 from "@/assets/ninja-site-3.jpg.asset.json";
+import ninja4 from "@/assets/ninja-site-4.jpg.asset.json";
+import ninja5 from "@/assets/ninja-site-5.jpg.asset.json";
+import ninja6 from "@/assets/ninja-site-6.jpg.asset.json";
+import ninja7 from "@/assets/ninja-site-7.jpg.asset.json";
 
 const galleryImages = [
-  { src: ninja1.url, label: "Ninja FlexDrawer" },
-  { src: ninja2.url, label: "2 gavetas independentes" },
-  { src: ninja3.url, label: "Capacidade de 10,4 L" },
-  { src: ninja4.url, label: "Na sua cozinha" },
-  { src: ninja5.url, label: "Cozinha na gaveta" },
-  { src: ninja6.url, label: "Tecnologia Dual Zone" },
+  { src: ninja1.url, label: "Ninja FlexDrawer AF500EU" },
+  { src: ninja2.url, label: "Gaveta flexível 10,4 L" },
+  { src: ninja3.url, label: "Tecnologia Dual Zone" },
+  { src: ninja4.url, label: "7 funções de preparo" },
+  { src: ninja5.url, label: "Cozinha 2 alimentos ao mesmo tempo" },
+  { src: ninja6.url, label: "Na sua cozinha" },
   { src: ninja7.url, label: "Fácil de limpar" },
 ];
 
