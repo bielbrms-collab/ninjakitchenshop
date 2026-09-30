@@ -75,7 +75,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
                 <div className="aspect-square bg-secondary">
                   <img src={m.thumbnail} alt={m.name} className="w-full h-full object-cover" />
                 </div>
-                <p className="text-[11px] text-foreground font-medium px-1 py-1.5 truncate text-center">{m.name}</p>
+                <p className="text-[11px] text-foreground font-medium px-1 py-1.5 truncate text-center">{m.colorName ?? m.name}</p>
               </button>
             ))}
           </div>

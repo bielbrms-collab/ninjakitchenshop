@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useProduct } from "@/contexts/ProductContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -30,6 +31,14 @@ const galleryImages = [
 const ImageGallery = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [, setCurrent] = useState(0);
+  const { selectedModel, selectedModelIndex } = useProduct();
+  const images =
+    selectedModelIndex === 0
+      ? galleryImages
+      : selectedModel.galleryImages.map((src) => ({
+          src,
+          label: `Ninja FlexDrawer ${selectedModel.colorName ?? ""}`.trim(),
+        }));
 
   const handleSlideChange = (swiper: SwiperType) => {
     setCurrent(swiper.activeIndex);
@@ -39,6 +48,7 @@ const ImageGallery = () => {
     <div className="relative w-full bg-background overflow-hidden">
       <div className="relative aspect-square w-full image-gallery-swiper">
         <Swiper
+          key={selectedModel.id}
           modules={[Pagination, Navigation]}
           slidesPerView={1}
           spaceBetween={0}
@@ -48,7 +58,7 @@ const ImageGallery = () => {
           onSlideChange={handleSlideChange}
           className="h-full w-full"
         >
-          {galleryImages.map((img, i) => (
+          {images.map((img, i) => (
             <SwiperSlide key={i} className="flex items-center justify-center">
               <div className="h-full w-full flex items-center justify-center relative">
                 <img
