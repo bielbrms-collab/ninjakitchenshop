@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowLeft, MapPin, ChevronRight, Minus, Plus, Smile, CreditCard } from "lucide-react";
+import { ArrowLeft, MapPin, ChevronRight, Minus, Plus, CreditCard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "@/hooks/use-toast";
