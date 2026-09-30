@@ -48,7 +48,7 @@ const products = [
 const RecommendedProducts = () => {
   return (
     <div className="px-4 py-4 bg-background border-t-4 border-secondary">
-      <h2 className="text-base font-bold text-foreground mb-4">Você também pode gostar</h2>
+      <h2 className="text-base font-bold text-foreground mb-4">También te puede gustar</h2>
       <div className="grid grid-cols-2 gap-3">
         {products.map((p, i) => (
           <div key={i} className="border border-border rounded-lg overflow-hidden bg-background">

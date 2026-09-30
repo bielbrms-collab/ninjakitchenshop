@@ -10,8 +10,8 @@ const CouponSection = () => {
       <div className="flex gap-3 overflow-x-auto pb-2 -mr-4">
         <div className="min-w-[260px] flex items-center justify-between p-3 bg-[hsl(180,30%,96%)] border border-[hsl(180,40%,85%)] rounded-xl shrink-0">
           <div>
-            <p className="text-sm font-bold text-foreground">Cupom de envio</p>
-            <p className="text-xs text-muted-foreground">Desconto de R$ 20 no frete<br/>em pedidos acima de R$ 9</p>
+            <p className="text-sm font-bold text-foreground">Cupón de envío</p>
+            <p className="text-xs text-muted-foreground">Descuento de 20 € en el envío<br/>en pedidos superiores a 9 €</p>
           </div>
           <button className="text-sm font-bold text-[hsl(180,50%,40%)] border border-[hsl(180,50%,40%)] px-4 py-1.5 rounded-full">
             Usar
@@ -19,8 +19,8 @@ const CouponSection = () => {
         </div>
         <div className="min-w-[260px] flex items-center justify-between p-3 bg-[hsl(180,30%,96%)] border border-[hsl(180,40%,85%)] rounded-xl shrink-0">
           <div>
-            <p className="text-sm font-bold text-foreground">Cupom da loja</p>
-            <p className="text-xs text-muted-foreground">Desconto de 5%<br/>acima de R$ 99</p>
+            <p className="text-sm font-bold text-foreground">Cupón de la tienda</p>
+            <p className="text-xs text-muted-foreground">Descuento del 5%<br/>en pedidos superiores a 99 €</p>
           </div>
           <button className="text-sm font-bold text-[hsl(180,50%,40%)] border border-[hsl(180,50%,40%)] px-4 py-1.5 rounded-full">
             Usar

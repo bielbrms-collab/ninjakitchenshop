@@ -15,7 +15,7 @@ const ViewerCount = () => {
     <div className="flex items-center gap-1.5 px-4 py-2 bg-primary/5">
       <Eye className="w-4 h-4 text-primary" />
       <span className="text-xs text-primary font-semibold">
-        🔥 {count} pessoas comprando agora
+        🔥 {count} personas comprando ahora
       </span>
     </div>
   );
