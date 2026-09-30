@@ -30,7 +30,6 @@ const Checkout = () => {
   const [bairro, setBairro] = useState("");
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
-  const [cpf, setCpf] = useState("");
   const [addressFilled, setAddressFilled] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
   const [paymentLoading, setPaymentLoading] = useState(false);
@@ -80,29 +79,6 @@ const Checkout = () => {
     return `00:${m}:${s}`;
   };
 
-  const formatCpf = (value: string) => {
-    const digits = value.replace(/\D/g, "").slice(0, 11);
-    return digits
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d)/, "$1.$2")
-      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-  };
-
-  const isValidCpf = (cpfValue: string): boolean => {
-    const digits = cpfValue.replace(/\D/g, "");
-    if (digits.length !== 11) return false;
-    if (/^(\d)\1{10}$/.test(digits)) return false;
-    let sum = 0;
-    for (let i = 0; i < 9; i++) sum += parseInt(digits[i]) * (10 - i);
-    let rest = (sum * 10) % 11;
-    if (rest === 10) rest = 0;
-    if (rest !== parseInt(digits[9])) return false;
-    sum = 0;
-    for (let i = 0; i < 10; i++) sum += parseInt(digits[i]) * (11 - i);
-    rest = (sum * 10) % 11;
-    if (rest === 10) rest = 0;
-    return rest === parseInt(digits[10]);
-  };
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, "").slice(0, 11);
@@ -246,16 +222,9 @@ const Checkout = () => {
                 className="w-1/3 px-3 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
-            <input
-              type="text"
-              placeholder="DNI / NIE / Pasaporte"
-              value={cpf}
-              onChange={(e) => setCpf(e.target.value.slice(0, 20))}
-              className="w-full px-3 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-1 focus:ring-primary"
-            />
             <button
               onClick={() => {
-                if (!nome || !telefone || !cep || !endereco || !numero || !cidade || !cpf) {
+                if (!nome || !telefone || !cep || !endereco || !numero || !cidade) {
                   toast({ title: "Faltan datos", description: "Completa todos los campos obligatorios.", variant: "destructive" });
                   return;
                 }
@@ -284,13 +253,6 @@ const Checkout = () => {
         )}
       </div>
 
-      {/* CPF display */}
-      {addressFilled && (
-        <div className="bg-background px-4 py-2 border-b border-border flex items-center gap-2">
-          <span className="text-muted-foreground text-sm">👤</span>
-          <span className="text-sm text-foreground">Documento: {cpf}</span>
-        </div>
-      )}
 
       {/* Dashed separator */}
       <div className="h-2 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-300 opacity-40" style={{
