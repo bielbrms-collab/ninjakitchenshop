@@ -17,7 +17,7 @@ const ProductInfo = () => {
             Oficial
           </span>
           <h1 className="text-base font-bold text-foreground leading-tight">
-            AIRFRYER NINJA FLEXDRAWER AF500EU 10,4 L – DUAL ZONE, 7 FUNÇÕES, PRETA
+            FREIDORA DE AIRE NINJA FLEXDRAWER AF500EU 10,4 L – DUAL ZONE, 7 FUNCIONES, NEGRA
           </h1>
         </div>
         <div className="flex items-center gap-2 text-sm">
@@ -34,12 +34,12 @@ const ProductInfo = () => {
         <div className="flex items-center gap-2 text-sm">
           <Truck className="w-4 h-4 text-primary shrink-0" />
           <span className="font-semibold text-primary text-xs bg-primary/10 px-1.5 py-0.5 rounded">
-            Frete grátis
+            Envío gratis
           </span>
-          <span className="text-muted-foreground text-xs">Receba até 13-16 de abr</span>
+          <span className="text-muted-foreground text-xs">Recíbelo entre el 13 y el 16 de abr.</span>
         </div>
         <p className="text-xs text-muted-foreground mt-1 ml-6 line-through">
-          Taxa de envio: R$ 14,50
+          Gastos de envío: 14,50 €
         </p>
       </div>
 
@@ -62,7 +62,7 @@ const ProductInfo = () => {
               </div>
             ))}
           </div>
-          <span className="text-xs text-muted-foreground whitespace-nowrap">Cor: Preto</span>
+          <span className="text-xs text-muted-foreground whitespace-nowrap">Color: {selectedModel.colorName ?? "Negro"}</span>
           <ChevronRight className="w-4 h-4 text-muted-foreground" />
         </button>
       </div>

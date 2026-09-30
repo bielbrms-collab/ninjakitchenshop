@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { ShoppingBag } from "lucide-react";
 
 const names = [
-  "Maria", "João", "Ana", "Carlos", "Fernanda", "Lucas", "Juliana", "Pedro",
-  "Camila", "Rafael", "Bruna", "Thiago", "Larissa", "Diego", "Amanda",
+  "María", "José", "Ana", "Carlos", "Lucía", "Pablo", "Laura", "Pedro",
+  "Carmen", "Javier", "Marta", "Sergio", "Elena", "Diego", "Paula",
 ];
 const cities = [
-  "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba", "Salvador",
-  "Fortaleza", "Brasília", "Recife", "Porto Alegre", "Manaus", "Goiânia",
+  "Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza",
+  "Málaga", "Murcia", "Bilbao", "Alicante", "Valladolid", "Granada",
 ];
 
 const SocialProofToast = () => {
@@ -40,7 +40,7 @@ const SocialProofToast = () => {
       <div className="flex items-center gap-2 bg-foreground text-background px-3 py-2 rounded-lg shadow-lg max-w-[280px]">
         <ShoppingBag className="w-4 h-4 shrink-0" />
         <p className="text-xs">
-          <span className="font-bold">{name}</span> de {city} acabou de comprar!
+          <span className="font-bold">{name}</span> de {city} acaba de comprar!
         </p>
       </div>
     </div>

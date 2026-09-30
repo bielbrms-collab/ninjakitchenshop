@@ -14,7 +14,7 @@ const StoreInfo = () => {
         </div>
         <div className="flex-1">
           <h3 className="text-sm font-bold">Ninja Oficial</h3>
-          <p className="text-xs text-muted-foreground">6,0 mil vendido(s)</p>
+          <p className="text-xs text-muted-foreground">6,0 mil vendidos</p>
         </div>
         <button className="px-4 py-1.5 border border-primary text-primary text-xs font-semibold rounded-full">
           Visitar

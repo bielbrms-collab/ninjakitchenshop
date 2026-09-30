@@ -49,9 +49,9 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
               <img src={selectedModel.thumbnail} alt={selectedModel.name} className="w-full h-full object-cover" />
             </div>
             <div className="flex-1">
-              <p className="text-xl font-bold text-primary">R$ {price.toFixed(2).replace(".", ",")}</p>
+              <p className="text-xl font-bold text-primary">€ {price.toFixed(2).replace(".", ",")}</p>
               <span className="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded mt-1 inline-block">
-                Economize 4% com bônus
+                Ahorra un 4% con bonificación
               </span>
             </div>
             <button onClick={onClose} className="p-1">
@@ -62,7 +62,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
 
         {/* Model selector */}
         <div className="px-4 py-4">
-          <h3 className="text-sm font-bold text-foreground mb-3">Cor ({models.length})</h3>
+          <h3 className="text-sm font-bold text-foreground mb-3">Color ({models.length})</h3>
           <div className="grid grid-cols-3 gap-3">
             {models.map((m, i) => (
               <button
@@ -83,7 +83,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
 
         {/* Size selector */}
         <div className="px-4 pb-4">
-          <h3 className="text-sm font-bold text-foreground mb-3">Capacidade ({sizes.length})</h3>
+          <h3 className="text-sm font-bold text-foreground mb-3">Capacidad ({sizes.length})</h3>
           <div className="flex gap-2 flex-wrap">
             {sizes.map((s, i) => (
               <button
@@ -101,7 +101,7 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
 
         {/* Quantity */}
         <div className="px-4 pb-6">
-          <h3 className="text-sm font-bold text-foreground mb-3">Quantidade</h3>
+          <h3 className="text-sm font-bold text-foreground mb-3">Cantidad</h3>
           <div className="flex items-center border border-border rounded-lg w-fit">
             <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="p-3 text-muted-foreground">
               <Minus className="w-4 h-4" />
@@ -117,18 +117,18 @@ const ProductSelectModal = ({ open, onClose, mode }: Props) => {
         <div className="sticky bottom-0 bg-background border-t border-border p-4 flex gap-3">
           {mode === "cart" && (
             <button onClick={handleAction} className="flex-1 py-3.5 rounded-full bg-secondary text-foreground font-semibold text-sm">
-              Adicionar ao carrinho
+              Añadir al carrito
             </button>
           )}
           <button
             onClick={() => {
               handleAction();
-              tiktokInitiateCheckout(price * quantity, selectedModel.id, `AIRFRYER ${selectedModel.name}`);
+              tiktokInitiateCheckout(price * quantity, selectedModel.id, `FREIDORA DE AIRE ${selectedModel.name}`);
               navigate("/checkout");
             }}
             className="flex-1 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm"
           >
-            Comprar Agora
+            Comprar ahora
           </button>
         </div>
       </div>

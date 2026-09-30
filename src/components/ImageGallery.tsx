@@ -20,12 +20,12 @@ import ninja7 from "@/assets/ninja-site-7.jpg.asset.json";
 
 const galleryImages = [
   { src: ninja1.url, label: "Ninja FlexDrawer AF500EU" },
-  { src: ninja2.url, label: "Gaveta flexível 10,4 L" },
-  { src: ninja3.url, label: "Tecnologia Dual Zone" },
-  { src: ninja4.url, label: "7 funções de preparo" },
-  { src: ninja5.url, label: "Cozinha 2 alimentos ao mesmo tempo" },
-  { src: ninja6.url, label: "Na sua cozinha" },
-  { src: ninja7.url, label: "Fácil de limpar" },
+  { src: ninja2.url, label: "Cajón flexible de 10,4 L" },
+  { src: ninja3.url, label: "Tecnología Dual Zone" },
+  { src: ninja4.url, label: "7 funciones de cocinado" },
+  { src: ninja5.url, label: "Cocina 2 alimentos a la vez" },
+  { src: ninja6.url, label: "En tu cocina" },
+  { src: ninja7.url, label: "Fácil de limpiar" },
 ];
 
 const ImageGallery = () => {

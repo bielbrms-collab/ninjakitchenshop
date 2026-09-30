@@ -16,37 +16,37 @@ const reviews = [
   {
     name: "R**s",
     avatar: avatarR,
-    item: "Airfryer Ninja AF500EU · Preto",
-    text: "Cabe um frango inteiro, muito prático. Pode ir sem medo",
+    item: "Freidora de aire Ninja AF500EU · Negro",
+    text: "Cabe un pollo entero, muy práctica. Cómprala sin miedo",
     images: [review1.url, review7.url] as string[],
   },
   {
     name: "B**a",
     avatar: null,
     initial: "B",
-    item: "Airfryer Ninja AF500EU · Preto",
-    text: "As duas gavetas salvam o jantar, faço carne e batata juntos",
+    item: "Freidora de aire Ninja AF500EU · Negro",
+    text: "Las dos zonas me salvan la cena, hago carne y patatas a la vez",
     images: [review5.url] as string[],
   },
   {
     name: "A**a",
     avatar: avatarA,
-    item: "Airfryer Ninja AF500EU · Preto",
-    text: "Perfeito, amei muitooo💖💖💖.",
+    item: "Freidora de aire Ninja AF500EU · Negro",
+    text: "Perfecta, me encantaaa💖💖💖.",
     images: [review4.url] as string[],
   },
   {
     name: "R**l",
     avatar: avatarRl,
-    item: "Airfryer Ninja AF500EU · Preto",
-    text: "Peguei uma pra mim e outra pra minha mãe, ela adorou",
+    item: "Freidora de aire Ninja AF500EU · Negro",
+    text: "Compré una para mí y otra para mi madre, le encantó",
     images: [review3.url] as string[],
   },
   {
     name: "Joel Lima",
     avatar: avatarJoel,
-    item: "Airfryer Ninja AF500EU · Preto",
-    text: "Comprei meio na dúvida, mas a qualidade surpreendeu",
+    item: "Freidora de aire Ninja AF500EU · Negro",
+    text: "La compré con algo de duda, pero la calidad me sorprendió",
     images: [review2.url, review6.url] as string[],
   },
 ];
@@ -64,9 +64,9 @@ const Reviews = () => {
         </div>
       )}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-base font-bold text-foreground">Avaliações dos clientes (847)</h2>
+        <h2 className="text-base font-bold text-foreground">Opiniones de clientes (847)</h2>
         <button className="flex items-center text-xs text-muted-foreground">
-          Ver mais <ChevronRight className="w-4 h-4" />
+          Ver más <ChevronRight className="w-4 h-4" />
         </button>
       </div>
 
@@ -107,7 +107,7 @@ const Reviews = () => {
                 <Star key={s} className="w-3 h-3 fill-[hsl(var(--star))] text-[hsl(var(--star))]" />
               ))}
             </div>
-            <p className="text-xs text-muted-foreground mb-1">Item: {r.item}</p>
+            <p className="text-xs text-muted-foreground mb-1">Artículo: {r.item}</p>
             <p className="text-sm text-foreground mb-2">{r.text}</p>
             {r.images.length > 0 && (
               <div className="flex gap-2 max-w-full overflow-x-auto">
@@ -115,7 +115,7 @@ const Reviews = () => {
                   <button key={j} type="button" onClick={() => setZoom(img)} className="shrink-0">
                     <img
                       src={img}
-                      alt={`Foto da avaliação de ${r.name}`}
+                      alt={`Foto de la opinión de ${r.name}`}
                       loading="lazy"
                       className="h-24 w-auto max-w-[45vw] rounded-lg object-contain bg-muted"
                     />

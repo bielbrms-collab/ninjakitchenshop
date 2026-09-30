@@ -23,7 +23,7 @@ const StickyFooter = () => {
         <div className="flex items-center max-w-lg mx-auto">
           <button className="flex flex-col items-center justify-center px-3 py-2">
             <Home className="w-5 h-5 text-muted-foreground" />
-            <span className="text-[10px] text-muted-foreground">Loja</span>
+            <span className="text-[10px] text-muted-foreground">Tienda</span>
           </button>
           <button className="flex flex-col items-center justify-center px-3 py-2">
             <MessageSquare className="w-5 h-5 text-muted-foreground" />
@@ -34,13 +34,13 @@ const StickyFooter = () => {
               onClick={() => handleOpenModal("cart")}
               className="flex-1 py-3 rounded-full bg-secondary text-foreground font-semibold text-sm border border-border"
             >
-              ao carrinho
+              Añadir al carrito
             </button>
             <button
               onClick={() => handleOpenModal("buy")}
               className="flex-1 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm"
             >
-              Comprar Agora
+              Comprar ahora
             </button>
           </div>
         </div>

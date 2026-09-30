@@ -39,16 +39,16 @@ const FlashSale = () => {
               -{discount}%
             </span>
             <span className="text-2xl font-extrabold text-primary-foreground">
-              R$ {fmt(price)}
+              € {fmt(price)}
             </span>
           </div>
           <div className="text-right">
             <div className="flex items-center gap-1 text-primary text-xs font-semibold">
               <Zap className="w-3.5 h-3.5 fill-current" />
-              Oferta Relâmpago
+              Oferta relámpago
             </div>
             <span className="text-xs text-primary-foreground/80">
-              Termina em{" "}
+              Termina en{" "}
               <span className="font-mono font-bold text-primary-foreground">
                 {pad(time.h)}:{pad(time.m)}:{pad(time.s)}
               </span>
@@ -56,7 +56,7 @@ const FlashSale = () => {
           </div>
         </div>
         <span className="text-sm line-through text-primary-foreground/50 mt-1 block">
-          R$ {fmt(originalPrice)}
+          € {fmt(originalPrice)}
         </span>
       </div>
 
@@ -64,10 +64,10 @@ const FlashSale = () => {
       <div className="flex items-center gap-2 px-4 py-2 bg-[hsl(145,60%,95%)] border-b border-border">
         <span className="text-xs">🏷️</span>
         <span className="text-xs text-[hsl(145,60%,30%)] font-medium">
-          Desconto de R$ {fmt(savings)}
+          Descuento de € {fmt(savings)}
         </span>
         <span className="text-xs text-[hsl(145,60%,30%)] font-semibold">
-          Economize {discount}% com bônus
+          Ahorra un {discount}% con bonificación
         </span>
       </div>
     </div>
