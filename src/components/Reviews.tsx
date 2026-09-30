@@ -2,55 +2,44 @@ import { Star, ChevronRight } from "lucide-react";
 import avatarR from "@/assets/reviews/avatar-r.jpg";
 import avatarA from "@/assets/reviews/avatar-a.jpg";
 import avatarRl from "@/assets/reviews/avatar-rl.jpg";
-import r1 from "@/assets/reviews/r-1.jpg";
-import r2 from "@/assets/reviews/r-2.jpg";
-import b1 from "@/assets/reviews/b-1.jpg";
-import b2 from "@/assets/reviews/b-2.jpg";
-import a1 from "@/assets/reviews/a-1.jpg";
-import a2 from "@/assets/reviews/a-2.jpg";
-import a3 from "@/assets/reviews/a-3.jpg";
-import a4 from "@/assets/reviews/a-4.jpg";
-import rl1 from "@/assets/reviews/rl-1.jpg";
-import rl2 from "@/assets/reviews/rl-2.jpg";
 import avatarJoel from "@/assets/reviews/avatar-joel.jpg";
-import joel1 from "@/assets/reviews/joel-1.jpg";
 
 const reviews = [
   {
     name: "R**s",
     avatar: avatarR,
-    item: "Capacete LS2",
-    text: "Bagulho é bom mesmo fml pode ir sem medo",
-    images: [r1, r2],
+    item: "Airfryer Ninja AF500EU · Preto",
+    text: "Cabe um frango inteiro, muito prático. Pode ir sem medo",
+    images: [] as string[],
   },
   {
     name: "B**a",
     avatar: null,
     initial: "B",
-    item: "Capacete LS2",
-    text: "LS2 é a melhor não tem jeito amei muito",
-    images: [b1, b2],
+    item: "Airfryer Ninja AF500EU · Preto",
+    text: "As duas gavetas salvam o jantar, faço carne e batata juntos",
+    images: [] as string[],
   },
   {
     name: "A**a",
     avatar: avatarA,
-    item: "Capacete LS2",
+    item: "Airfryer Ninja AF500EU · Preto",
     text: "Perfeito, amei muitooo💖💖💖.",
-    images: [a1, a2, a3, a4],
+    images: [] as string[],
   },
   {
     name: "R**l",
     avatar: avatarRl,
-    item: "Capacete LS2",
-    text: "Peguei um pra mim e um pra minha mulher ela adorou",
-    images: [rl1, rl2],
+    item: "Airfryer Ninja AF500EU · Preto",
+    text: "Peguei uma pra mim e outra pra minha mãe, ela adorou",
+    images: [] as string[],
   },
   {
     name: "Joel Lima",
     avatar: avatarJoel,
-    item: "Capacete NORISK",
+    item: "Airfryer Ninja AF500EU · Preto",
     text: "Comprei meio na dúvida, mas a qualidade surpreendeu",
-    images: [joel1],
+    images: [] as string[],
   },
 ];
 

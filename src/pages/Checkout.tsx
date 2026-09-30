@@ -300,7 +300,7 @@ const Checkout = () => {
       {/* Product */}
       <div className="bg-background px-4 py-3">
         <div className="flex items-center justify-between mb-3">
-          <span className="font-bold text-sm text-foreground">LS2</span>
+          <span className="font-bold text-sm text-foreground">Ninja</span>
           <button className="text-xs text-muted-foreground flex items-center gap-1">
             Adicionar nota <ChevronRight className="w-3 h-3" />
           </button>
@@ -315,7 +315,7 @@ const Checkout = () => {
             <div className="flex items-start gap-1">
               <span className="bg-emerald-500 text-background text-[10px] font-bold px-1.5 py-0.5 rounded">PROMO VERÃO</span>
               <p className="text-xs font-medium text-foreground leading-tight">
-                CAPACETE {item.model}
+                AIRFRYER {item.model}
               </p>
             </div>
             <p className="text-[11px] text-muted-foreground mt-0.5">{item.model}</p>
@@ -518,9 +518,9 @@ const Checkout = () => {
           email: `${telefone.replace(/\D/g, "")}@checkout.local`,
           phone: telefone,
         }}
-        itemTitle={`CAPACETE ${item.model}`}
+        itemTitle={`AIRFRYER ${item.model}`}
         onPaymentConfirmed={() => {
-          tiktokCompletePayment(total, item.model, `CAPACETE ${item.model}`);
+          tiktokCompletePayment(total, item.model, `AIRFRYER ${item.model}`);
           setTimeout(() => {
             setShowPixModal(false);
             window.location.href = "https://recebaagoraa.site/shop/up2/";
